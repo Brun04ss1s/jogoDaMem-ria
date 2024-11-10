@@ -156,6 +156,7 @@ public class Jogo extends JFrame {
     }
     public void verificarValores(){
         if (!cards[primeiroBotao].getClientProperty("valor").equals(cards[segundoBotao].getClientProperty("valor"))) {
+            JOptionPane.showMessageDialog(Jogo.this, "Errado");
             cards[primeiroBotao].setText("");
             cards[segundoBotao].setText("");
             cards[primeiroBotao].setEnabled(true);
