@@ -16,7 +16,6 @@ public class Jogo extends JFrame {
     private JToolBar barraDeFerramenta = new JToolBar();
     private JButton menuIniciar = new JButton("Menu");
     private JButton reiniciarJogo = new JButton("Reiniciar");
-    private JButton estatistica = new JButton("Estátisticas");
     private JButton[] cards = new JButton[12];
     private GridLayout layout = new GridLayout(4,3);
     private JPanel grid = new JPanel();
@@ -50,10 +49,8 @@ public class Jogo extends JFrame {
         //Criar a barra do menu
         menuIniciar.setFont(barraFonte);
         reiniciarJogo.setFont(barraFonte);
-        estatistica.setFont(barraFonte);
         barraDeFerramenta.add(menuIniciar);
         barraDeFerramenta.add(reiniciarJogo);
-        barraDeFerramenta.add(estatistica);
         add(barraDeFerramenta,BorderLayout.NORTH);
         pontuacaoJogador.setFont(barraFonte);
         pontuacaoJogador.setText("Pontos: " + pontuacao);

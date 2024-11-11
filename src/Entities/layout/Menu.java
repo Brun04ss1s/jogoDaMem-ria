@@ -82,6 +82,13 @@ public class Menu extends JFrame {
             }
         });
 
+        estatistica.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                estatisticas();
+            }
+        });
+
     }
     private void iniciarJogo(){
         this.dispose();
@@ -90,5 +97,10 @@ public class Menu extends JFrame {
     }
     private void fecharJogo(){
         this.dispose();
+    }
+    private void estatisticas(){
+        this.dispose();
+        Estatistica estatistica = new Estatistica();
+        estatistica.setVisible(true);
     }
 }
