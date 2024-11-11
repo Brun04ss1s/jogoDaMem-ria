@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Estatistica extends JFrame {
-    private JTextField campoBusca;
+    private JTextField buscarUsuario;
     private JButton botaoBuscar;
     private JTable tabelaResultados;
     private DefaultTableModel modeloTabela;
@@ -17,14 +17,15 @@ public class Estatistica extends JFrame {
         setTitle("Busca de Usuários - Jogo da Memória");
         setSize(700, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
         // Painel de busca com campo de texto e botão
         JPanel painelBusca = new JPanel();
-        campoBusca = new JTextField(30);
+        buscarUsuario = new JTextField(30);
         botaoBuscar = new JButton("Buscar");
         painelBusca.add(new JLabel("Buscar usuário:"));
-        painelBusca.add(campoBusca);
+        painelBusca.add(buscarUsuario);
         painelBusca.add(botaoBuscar);
 
         // Tabela para exibir resultados
@@ -40,7 +41,7 @@ public class Estatistica extends JFrame {
         botaoBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String nomeUsuario = campoBusca.getText();
+                String nomeUsuario = buscarUsuario.getText();
             }
         });
     }
