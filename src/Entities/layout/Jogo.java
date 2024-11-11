@@ -10,6 +10,7 @@ import java.util.List;
 
 public class Jogo extends JFrame {
     int pontuacao = 100;
+    private String usuario;
     private Font barraFonte = new Font("Arial Black", Font.BOLD,10);
     private Font jogoFonte = new Font("Arial Black", Font.BOLD, 26);
     private JToolBar barraDeFerramenta = new JToolBar();
@@ -26,6 +27,12 @@ public class Jogo extends JFrame {
     private int segundoBotao = 0;
     private int numeroDeCliques = 0, quantidade_acertos = 0;
 
+    public Jogo(String usuario){
+        super();
+        this.usuario = usuario;
+        configurarTelaJogo();
+        iniciarJogo();
+    }
     public Jogo(){
         super();
         configurarTelaJogo();

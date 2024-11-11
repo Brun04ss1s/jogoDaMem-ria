@@ -85,9 +85,8 @@ public class Menu extends JFrame {
     }
     private void iniciarJogo(){
         this.dispose();
-        Jogo jogo = new Jogo();
+        Usuario jogo = new Usuario();
         jogo.setVisible(true);
-
     }
     private void fecharJogo(){
         this.dispose();
