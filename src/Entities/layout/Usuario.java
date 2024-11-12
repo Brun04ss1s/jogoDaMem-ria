@@ -50,8 +50,6 @@ public class Usuario extends JFrame {
         ok.setFont(new Font("Arial Black", Font.BOLD, 12));
         painel.add(ok,gbc);
 
-        nome = labelNome.getText();
-
         add(painel);
         setTitle("JOGO DA MEMÓRIA");
         setSize(new Dimension(700, 500));
@@ -61,6 +59,7 @@ public class Usuario extends JFrame {
         ok.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                nome = labelNome.getText();
                 iniciarJogo(nome);
             }
         });

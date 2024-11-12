@@ -133,11 +133,13 @@ public class Jogo extends JFrame {
         Collections.shuffle(valor);
         return valor;
     }
-    public void verificarFimDoJogo() {
+    public void verificarFimDoJogo(ConexaoSQL con) {
         if (quantidade_acertos == 6) {
+            con.insert(this.usuario, this.pontuacao);
             exibirTelaFim("Parabéns, você venceu! Deseja voltar ao menu ou reiniciar o jogo?");
         } else if (pontuacao <= 0) {
             exibirTelaFim("Fim de jogo! Você perdeu. Deseja voltar ao menu ou reiniciar o jogo?");
+            con.insert(this.usuario, this.pontuacao);
         }
     }
     public void exibirTelaFim(String mensagem) {
@@ -176,7 +178,7 @@ public class Jogo extends JFrame {
         primeiroBotao = 0;
         segundoBotao = 0;
 
-        verificarFimDoJogo();
+        verificarFimDoJogo(new ConexaoSQL());
     }
     public void reiniciarJogo(){
         int retorno = configuracaoTelaConfirmacao("Deseja Reiniciar o jogo?");
